@@ -166,7 +166,7 @@ lib/
 
 ## Teşekkürler
 
-- İstinye Üniversitesi'ne destekleri için teşekkür ederiz
+- İstinye Üniversitesi'ne destekleri için teşekkür ederiz.
 
 
   
