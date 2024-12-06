@@ -10,7 +10,7 @@ import '../core/constants.dart';
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: arkaplanRenkim, // .fromARGB(255, 35, 47, 59),
@@ -29,10 +29,10 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-
+          
             // Yükleniyor yazısı
             // CircularProgressIndicator(),
-
+        
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
