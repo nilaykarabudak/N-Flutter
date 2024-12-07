@@ -10,7 +10,7 @@ import '../core/constants.dart';
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: arkaplanRenkim, // .fromARGB(255, 35, 47, 59),
@@ -21,36 +21,39 @@ class LoadingScreen extends StatelessWidget {
             // Logo bölümü
             Expanded(
               child: Container(
-                width: 150,
-                height: 150,
+                width: 200,
+                height: 200,
                 child: Image.asset(
                   'assets/images/logo.png',
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-          
+
             // Yükleniyor yazısı
-            // CircularProgressIndicator(),
-        
+             CircularProgressIndicator(),
+
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
-                width: 300,
-                child: DotLottieLoader.fromAsset(
-                  "assets/motions/loading.lottie",
-                  frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single);
-                    } else {
-                      return Container();
-                    }
-                  },
+                width: 100,
+                child: SizedBox(
+                  width: 200,
+                  child: DotLottieLoader.fromAsset("assets/motions/q5hJBuJqif.lottie",
+                  
+                    frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                      if (dotlottie != null) {
+                        return Lottie.memory(dotlottie.animations.values.single);
+                      } else {
+                        return Container();
+                      }
+                    },
+                  ),
                 ),
               ),
             ),
             // biraz boslok lazim
-            SizedBox(height: 20),
+            SizedBox(height: 30),
           ],
         ),
       ),

@@ -1,115 +1,150 @@
-// ana ekran
-
-import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
-
-import '../core/constants.dart';
-import '../widgets/bottom_menu.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRenkim, // .fromARGB(255, 35, 47, 59),
-      // AppBar
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text('Q'),
-        actions: [
-          IconButton(
-            icon: const Icon(CupertinoIcons.app),
-            onPressed: () {},
-          ),
-        ],
+        title: const Text('MoodNews'),
+        centerTitle: true,
+        backgroundColor: Colors.lightBlue, // Primary renk
       ),
-
-      // Drawer (Yan Menü)
-      drawer: Drawer(
-        backgroundColor: arkaplanRenkim,
-        elevation: 0,
-        child: Column(
-          children: [
-            // Drawer Header
-            Container(
-              height: 200,
-              // color: Colors.blue,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.black87,
-                  ),
-                  const SizedBox(height: 10),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Ruh Haline Göre Haberler
+              const Text(
+                'Önerilen Haberler',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-            // Menü öğeleri
-            ListTile(
-              leading: const Icon(CupertinoIcons.home),
-              title: const Text('Ana Sayfa'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-
-            ListTile(
-              leading: const Icon(CupertinoIcons.search),
-              title: const Text('History'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(CupertinoIcons.person),
-              title: const Text('Profile'),
-              onTap: () {
-                context.go("/profile");
-              },
-            ),
-            ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-
-      // Ana içerik
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              child: SizedBox(
-                width: double.infinity,
-                child: DotLottieLoader.fromAsset(
-                  "assets/motions/q2.lottie",
-                  frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                    if (dotlottie != null) {
-                      return Lottie.memory(dotlottie.animations.values.single);
-                    } else {
-                      return Container();
-                    }
-                  },
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 200,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    _buildNewsCard('Bilim ve Teknoloji', 'assets/images/bilim.jpg'),
+                    _buildNewsCard('Sağlık Haberleri', 'assets/images/health.jpg'),
+                    _buildNewsCard('Sanat ve Kültür', 'assets/images/art.jpg'),
+                  ],
                 ),
               ),
+              const SizedBox(height: 20),
+
+              // Kategoriler
+              const Text(
+                'Kategoriler',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  _buildCategoryCard('Mavi', Colors.blue),
+                  _buildCategoryCard('Kırmızı', Colors.red),
+                  _buildCategoryCard('Sarı', Colors.yellow),
+                  _buildCategoryCard('Yeşil', Colors.green),
+                ],
+              ),
+              const SizedBox(height: 20),
+
+              // Öne Çıkan Haberler
+              const Text(
+                'Öne Çıkan Haberler',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Column(
+                children: [
+                  _buildFeaturedNews(
+                      'NASA\'dan Yeni Keşif', 'Uzay hakkında çığır açan yeni bilgiler.', 'assets/images/space.jpg'),
+                  const SizedBox(height: 10),
+                  _buildFeaturedNews(
+                      'Ekonomi Yükseliyor', 'Borsa yeni rekorlar kırdı.', 'assets/images/economy.jpg'),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Haber Kartları
+  Widget _buildNewsCard(String title, String imagePath) {
+    return Container(
+      margin: const EdgeInsets.only(right: 10),
+      width: 150,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(imagePath, height: 120, width: 150, fit: BoxFit.cover),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Kategori Kartları
+  Widget _buildCategoryCard(String title, Color color) {
+    return GestureDetector(
+      onTap: () {
+        // Kategoriye gitme işlemi
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.8),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Öne Çıkan Haber Kartları
+  Widget _buildFeaturedNews(String title, String description, String imagePath) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(imagePath, height: 80, width: 80, fit: BoxFit.cover),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 5),
+                Text(description, style: const TextStyle(fontSize: 14, color: Colors.grey)),
+              ],
             ),
           ),
         ],
       ),
-
-      // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomMenu(),
     );
   }
 }
