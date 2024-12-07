@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MoodNews'),
+        title: const Text('Newsly'),
         centerTitle: true,
         backgroundColor: Colors.lightBlue, // Primary renk
         actions: [
@@ -65,13 +65,6 @@ class HomeScreen extends StatelessWidget {
               title: const Text('Profile'),
               onTap: () {
                 context.go("/profile");
-              },
-            ),
-            ListTile(
-              leading: const Icon(CupertinoIcons.person),
-              title: const Text('Kategori'),
-              onTap: () {
-                context.go("/category");
               },
             ),
             ListTile(

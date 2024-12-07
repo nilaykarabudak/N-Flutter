@@ -41,7 +41,25 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/category',
-      builder: (context, state) => const CategoryScreen(categoryName: '', categoryColor: Colors.black,),
-    )
+      builder: (context, state) {
+        final extra = state.extra as Map<String, dynamic>?;
+
+        if (extra == null) {
+          return Scaffold(
+            body: Center(
+              child: Text('Kategori bilgisi bulunamadı!'),
+            ),
+          );
+        }
+
+        final categoryName = extra['categoryName'] as String;
+        final categoryColor = extra['categoryColor'] as Color;
+
+        return CategoryScreen(
+          categoryName: categoryName,
+          categoryColor: categoryColor,
+        );
+      },
+    ),
   ],
 );
