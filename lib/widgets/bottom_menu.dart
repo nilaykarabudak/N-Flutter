@@ -27,7 +27,7 @@ class BottomMenu extends StatelessWidget {
               context.go("/search");
             },
             icon: Icon(
-              CupertinoIcons.search,
+              CupertinoIcons.search_circle_fill,
             ),
           ),
           IconButton(
@@ -43,7 +43,7 @@ class BottomMenu extends StatelessWidget {
               context.go("/history");
             },
             icon: Icon(
-              Icons.history,
+              Icons.history_edu,
             ),
           ),
           IconButton(
@@ -51,7 +51,7 @@ class BottomMenu extends StatelessWidget {
               context.go("/profile");
             },
             icon: Icon(
-              CupertinoIcons.person,
+              CupertinoIcons.person_alt_circle,
             ),
           ),
         ],
