@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/constants.dart';
 import 'package:flutter_app/widgets/bottom_menu.dart';
+import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
 
