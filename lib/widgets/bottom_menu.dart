@@ -35,7 +35,7 @@ class BottomMenu extends StatelessWidget {
               context.go("/voice");
             },
             icon: Icon(
-              Icons.android,
+              Icons.voice_chat,
             ),
           ),
           IconButton(

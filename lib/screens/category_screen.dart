@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/constants.dart';
+import 'package:flutter_app/widgets/bottom_menu.dart';
 
 class CategoryScreen extends StatelessWidget {
+
   final String categoryName;
   final Color categoryColor;
-
-  // Constructor, kategori bilgilerini alıyor
+   // Constructor, kategori bilgilerini alıyor
   const CategoryScreen({
     Key? key,
     required this.categoryName,
     required this.categoryColor,
   }) : super(key: key);
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,10 @@
+
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/core/constants.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,7 +16,77 @@ class HomeScreen extends StatelessWidget {
         title: const Text('MoodNews'),
         centerTitle: true,
         backgroundColor: Colors.lightBlue, // Primary renk
+        actions: [
+          IconButton(icon: const Icon(CupertinoIcons.bell),
+          onPressed: (){})
+        ],
       ),
+
+  // Drawer (Yan Menü)
+      drawer: Drawer(
+        backgroundColor: arkaplanRenkim,
+        elevation: 0,
+        child: Column(
+          children: [
+            // Drawer Header
+            Container(
+              height: 200,
+              // color: Colors.blue,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    CupertinoIcons.person_circle,
+                    size: 80,
+                    color: Colors.black87,
+                  ),
+                  const SizedBox(height: 10),
+                ],
+              ),
+            ),
+            // Menü öğeleri
+            ListTile(
+              leading: const Icon(CupertinoIcons.home),
+              title: const Text('Ana Sayfa'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(CupertinoIcons.search),
+              title: const Text('History'),
+              onTap: () {
+                context.go("/history");
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Profile'),
+              onTap: () {
+                context.go("/profile");
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Kategori'),
+              onTap: () {
+                context.go("/category");
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.settings),
+              title: const Text('Ayarlar'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+
+
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -49,10 +125,10 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 10,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  _buildCategoryCard('Mavi', Colors.blue),
-                  _buildCategoryCard('Kırmızı', Colors.red),
-                  _buildCategoryCard('Sarı', Colors.yellow),
-                  _buildCategoryCard('Yeşil', Colors.green),
+                  _buildCategoryCard(context,'Mavi', Colors.blue),
+                  _buildCategoryCard(context,'Kırmızı', Colors.red),
+                  _buildCategoryCard(context,'Sarı', Colors.yellow),
+                  _buildCategoryCard(context,'Yeşil', Colors.green),
                 ],
               ),
               const SizedBox(height: 20),
@@ -102,10 +178,17 @@ class HomeScreen extends StatelessWidget {
   }
 
   // Kategori Kartları
-  Widget _buildCategoryCard(String title, Color color) {
+  Widget _buildCategoryCard(BuildContext context,String title, Color color) {
     return GestureDetector(
       onTap: () {
         // Kategoriye gitme işlemi
+        context.go(
+        '/category',
+        extra: {
+          'categoryName': title,
+          'categoryColor': color,
+        },
+      );
       },
       child: Container(
         decoration: BoxDecoration(

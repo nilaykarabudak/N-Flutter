@@ -1,6 +1,7 @@
 // uygulamada sayfalari ve navigasyon islemlerini burada tanimlicaz
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/category_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/history_screen.dart';
 import '../screens/loading_screen.dart';
@@ -8,6 +9,7 @@ import '../screens/home_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/search_screen.dart';
 import '../screens/voice_screen.dart';
+import '../screens/category_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
@@ -36,6 +38,10 @@ final router = GoRouter(
     GoRoute(
       path: '/history',
       builder: (context, state) => const HistoryScreen(),
+    ),
+    GoRoute(
+      path: '/category',
+      builder: (context, state) => const CategoryScreen(categoryName: '', categoryColor: Colors.black,),
     )
   ],
 );
