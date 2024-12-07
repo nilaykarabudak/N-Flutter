@@ -13,9 +13,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Newsly'),
+        title: const Text('NEWSLY'),
         centerTitle: true,
-        backgroundColor: Colors.lightBlue, // Primary renk
+        backgroundColor: const Color.fromARGB(255, 245, 194, 211), // Primary renk
         actions: [
           IconButton(icon: const Icon(CupertinoIcons.bell),
           onPressed: (){})
