@@ -8,14 +8,19 @@ import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('NEWSLY'),
+        title: Text(
+          'NEWSLY',
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 255, 255, 255)),
+        ),
+        
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 245, 194, 211), // Primary renk
+        backgroundColor: const Color.fromARGB(255, 75, 9, 89),// Primary renk
         actions: [
           IconButton(icon: const Icon(CupertinoIcons.bell),
           onPressed: (){})
@@ -24,7 +29,7 @@ class HomeScreen extends StatelessWidget {
 
   // Drawer (Yan Menü)
       drawer: Drawer(
-        backgroundColor: arkaplanRenkim,
+        backgroundColor: const Color.fromARGB(255, 214, 176, 222),
         elevation: 0,
         child: Column(
           children: [
@@ -118,10 +123,10 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 10,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  _buildCategoryCard(context,'Mavi', Colors.blue),
-                  _buildCategoryCard(context,'Kırmızı', Colors.red),
-                  _buildCategoryCard(context,'Sarı', Colors.yellow),
-                  _buildCategoryCard(context,'Yeşil', Colors.green),
+                  _buildCategoryCard(context,'Ekonomi Ve Finans', const Color.fromARGB(255, 90, 165, 226)),
+                  _buildCategoryCard(context,'Son Dakika', Colors.red),
+                  _buildCategoryCard(context,'Spor', Colors.yellow),
+                  _buildCategoryCard(context,'Politika', const Color.fromARGB(255, 0, 0, 0)),
                 ],
               ),
               const SizedBox(height: 20),

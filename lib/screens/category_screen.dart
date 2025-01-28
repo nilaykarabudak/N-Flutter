@@ -21,7 +21,7 @@ class CategoryScreen extends StatelessWidget {
         backgroundColor: categoryColor,
         title: Text(
           categoryName,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: Color.fromARGB(255, 246, 240, 240)),
         ),
       ),
       body: Padding(
