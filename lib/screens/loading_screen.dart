@@ -13,7 +13,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRenkim, // .fromARGB(255, 35, 47, 59),
+      backgroundColor: const Color.fromARGB(255, 75, 9, 89),
       body: SizedBox.expand(
         // width: double.infinity,
         child: Column(
@@ -21,8 +21,8 @@ class LoadingScreen extends StatelessWidget {
             // Logo bölümü
             Expanded(
               child: Container(
-                width: 200,
-                height: 200,
+                width: 230,
+                height: 230, 
                 child: Image.asset(
                   'assets/images/logo.png',
                   fit: BoxFit.contain,
@@ -36,7 +36,7 @@ class LoadingScreen extends StatelessWidget {
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
-                width: 100,
+                width: 130,
                 child: SizedBox(
                   width: 200,
                   child: DotLottieLoader.fromAsset("assets/motions/q5hJBuJqif.lottie",
@@ -53,7 +53,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
             // biraz boslok lazim
-            SizedBox(height: 30),
+            SizedBox(height: 40),
           ],
         ),
       ),
