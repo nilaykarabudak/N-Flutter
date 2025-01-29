@@ -1,6 +1,3 @@
-
-// ana ekran
-
 import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.app),
+            icon: Icon(CupertinoIcons.moon_fill),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -50,13 +47,13 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.home),
-              title: Text('Ana Sayfa'),
-              onTap: () => Navigator.pop(context),
+              leading: Icon(CupertinoIcons.news),
+              title: Text('Haberler'),
+              onTap: () => context.go("/news"),
             ),
             ListTile(
               leading: Icon(CupertinoIcons.search),
-              title: Text('Arama Geçmişi'),
+              title: Text('Arama'),
               onTap: () => context.push("/search"),
             ),
             ListTile(
@@ -113,24 +110,24 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.all(24),
                   children: [
                     SuggestedActionCard(
-                      icon: Icons.chat,
-                      title: "Sohbet Başlat",
-                      subtitle: "Yapay zeka ile sohbet edin",
-                      onTap: () => context.push("/chat"),
+                      icon: Icons.article,
+                      title: "Son Dakika Haberleri",
+                      subtitle: "En güncel haberleri görüntüleyin",
+                      onTap: () => context.push("/latest-news"),
                     ),
                     SizedBox(height: 16),
                     SuggestedActionCard(
-                      icon: Icons.history,
-                      title: "Son Aramalar",
-                      subtitle: "Geçmiş aramalarınızı görüntüleyin",
-                      onTap: () => context.push("/search"),
+                      icon: Icons.trending_up,
+                      title: "Popüler Haberler",
+                      subtitle: "En çok okunan haberleri keşfedin",
+                      onTap: () => context.push("/trending-news"),
                     ),
                     SizedBox(height: 16),
                     SuggestedActionCard(
-                      icon: Icons.settings,
-                      title: "Ayarlar",
-                      subtitle: "Uygulama ayarlarını özelleştirin",
-                      onTap: () => context.push("/settings"),
+                      icon: Icons.category,
+                      title: "Kategoriler",
+                      subtitle: "İlginizi çeken haberleri keşfedin",
+                      onTap: () => context.push("/categories"),
                     ),
                   ],
                 ),

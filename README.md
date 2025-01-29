@@ -9,8 +9,7 @@
 
 ## Proje Hakkında
 
- Newsly; kullanıcıların ruh halleriyle uyumlu, renk teorisine dayalı haber kategorilerini keşfetmesini sağlar. Kullanıcılar, belirli bir ruh hali için optimize edilmiş haberleri okuyabilir, kategorilere göre haber filtreleyebilir ve beğendikleri haberleri kaydedebilir.
-
+NEWSLY, en güncel ve popüler haberleri takip etmenizi sağlayan modern bir haber uygulamasıdır. Kullanıcı dostu arayüzü ve özelleştirilebilir temalarıyla haber okuma deneyiminizi kişiselleştirir. Kategorilere ayrılmış içerikler sayesinde ilginizi çeken haberleri kolayca bulabilir, gece/gündüz modu ile göz yorgunluğunu en aza indirebilirsiniz. Ayrıca, geçmiş aramaları görüntüleyerek favori haberlerinize hızlıca ulaşabilirsiniz.
   
 
 ## Ekibimiz
@@ -39,9 +38,7 @@ Kullanıcılar, uygulama hem gündüz hem de gece modu seçenekleri sunacak.
 
 Uygulama, hem mobil cihazlar (akıllı telefon ve tablet) hem de masaüstü bilgisayarlar için optimize edilecek.
 
-- Dil Desteği
 
-İngilizce ve Türkçe olmak üzere iki dil desteklenecek.
   
 
 ## Kullanılan Teknolojiler
