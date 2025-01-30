@@ -131,7 +131,23 @@ lib/
 
 ## Ekran Görüntüleri
 
-[[text](assets/images/screenshot)]
+!(assets/images/screenshot/anaekran.PNG)
+!(assets/images/screenshot/arama.PNG)
+!(assets/images/screenshot/ekrangoruntusu.PNG)
+!(assets/images/screenshot/flutter7.PNG)
+!(assets/images/screenshot/flutter8.PNG)
+!(assets/images/screenshot/flutter9.PNG)
+!(assets/images/screenshot/flutter10.PNG)
+!(assets/images/screenshot/flutter11.PNG)
+!(assets/images/screenshot/flutter12.PNG)
+!(assets/images/screenshot/fluttter6.PNG)
+!(assets/images/screenshot/giriş.PNG)
+!(assets/images/screenshot/profil.PNG)
+
+
+
+
+
 
   
 
