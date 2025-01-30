@@ -64,12 +64,12 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(20),
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 16,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
                 childAspectRatio: 0.85,
               ),
               delegate: SliverChildBuilderDelegate(
@@ -109,7 +109,7 @@ class SearchScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                childCount: 4,
+                childCount: 1,
               ),
             ),
           ),
