@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),
           child: Container(
-            color: const Color.fromARGB(255, 19, 19, 19), 
+            color: const Color.fromARGB(255, 208, 137, 161), 
             height: 4.0,
           ),
         ),

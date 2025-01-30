@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+class ThemeProvider with ChangeNotifier {
+  bool _isDark = false;
+  bool get isDark => _isDark;
+
+  void toggleTheme() {
+    _isDark = !_isDark;
+    notifyListeners();
+  }
+}
 
 const colors = {
-  "primary": Color.fromARGB(255, 181, 22, 22), // Bordo ana renk
+  "primary": Color.fromARGB(255, 140, 11, 69), // Bordo ana renk
   "onPrimary": Colors.white,
   "secondary": Color.fromARGB(255, 240, 228, 233), // Açık pembe arka plan
   "onSecondary": Colors.black, // Yazılar için siyah
@@ -15,7 +24,7 @@ const colors = {
 };
 
 const darkColors = {
-  "primary": Color.fromARGB(255, 100, 0, 50), // Daha koyu bordo/mor
+  "primary": Color.fromARGB(255, 146, 4, 75), // Daha koyu bordo/mor
   "onPrimary": Colors.white,
   "secondary": Color.fromARGB(255, 140, 11, 69), // Bordo tonu arka plan
   "onSecondary": Colors.white,
