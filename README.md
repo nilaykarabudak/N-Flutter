@@ -130,24 +130,18 @@ lib/
   
 
 ## Ekran Görüntüleri
-
-!(assets/images/screenshot/anaekran.PNG)
-!(assets/images/screenshot/arama.PNG)
-!(assets/images/screenshot/ekrangoruntusu.PNG)
-!(assets/images/screenshot/flutter7.PNG)
-!(assets/images/screenshot/flutter8.PNG)
-!(assets/images/screenshot/flutter9.PNG)
-!(assets/images/screenshot/flutter10.PNG)
-!(assets/images/screenshot/flutter11.PNG)
-!(assets/images/screenshot/flutter12.PNG)
-!(assets/images/screenshot/fluttter6.PNG)
-!(assets/images/screenshot/giriş.PNG)
-!(assets/images/screenshot/profil.PNG)
-
-
-
-
-
+![alt text](assets/images/giriş.PNG)
+![alt text](assets/images/anaekran.PNG)
+![alt text](assets/images/arama.PNG)
+![alt text](assets/images/ekrangoruntusu.PNG)
+![alt text](assets/images/flutter7.PNG)
+![alt text](assets/images/flutter8.PNG)
+![alt text](assets/images/flutter9.PNG)
+![alt text](assets/images/flutter10.PNG)
+![alt text](assets/images/flutter11.PNG)
+![alt text](assets/images/flutter12.PNG)
+![alt text](assets/images/fluttter6.PNG)
+![alt text](assets/images/profil.PNG)
 
 ## Demo Video
 https://github.com/user-attachments/assets/9cbe8d74-b9db-4a00-8763-7164f97d8350
