@@ -131,7 +131,7 @@ lib/
 
 ## Ekran Görüntüleri
 
-[Uygulama ekran görüntüleri buraya eklenecek]
+[[text](assets/images/screenshot)]
 
   
 
