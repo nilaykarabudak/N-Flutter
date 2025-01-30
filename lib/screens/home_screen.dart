@@ -4,26 +4,45 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-
 import '../core/constants.dart';
-import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
 import '../widgets/suggested_action_card.dart';
+import '../main.dart'; 
+import 'package:google_fonts/google_fonts.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context);
+    bool isDarkMode = themeProvider.themeMode == ThemeMode.dark;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('NEWSLY', style: Theme.of(context).textTheme.headlineMedium),
+        title: const Text(
+          'NEWSLY',
+          style: TextStyle(
+            color: Colors.white, 
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
+        backgroundColor:  Color.fromARGB(255, 81, 44, 113), 
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            color: const Color.fromARGB(255, 19, 19, 19), 
+            height: 4.0,
+          ),
+        ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon_fill),
+            icon: Icon(isDarkMode ? CupertinoIcons.sun_max_fill : CupertinoIcons.moon_fill),
             onPressed: () {
-              context.read<ThemeProvider>().toggleTheme();
+              themeProvider.toggleTheme();
             },
           ),
         ],
@@ -35,42 +54,47 @@ class HomeScreen extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                 child: Icon(
-                  CupertinoIcons.person_circle,
+                  CupertinoIcons.person_solid,
                   size: 50,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Color.fromARGB(255, 81, 44, 113), 
               ),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.news),
-              title: Text('Haberler'),
+              leading: const Icon(CupertinoIcons.news),
+              title: const Text('Haberler'),
               onTap: () => context.go("/news"),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.search),
-              title: Text('Arama'),
+              leading: const Icon(CupertinoIcons.search),
+              title: const Text('Arama'),
               onTap: () => context.push("/search"),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.person),
-              title: Text('Profil'),
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Profil'),
               onTap: () => context.push("/profile"),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.settings),
-              title: Text('Ayarlar'),
+              leading: const Icon(CupertinoIcons.settings),
+              title: const Text('Ayarlar'),
               onTap: () => context.push("/settings"),
             ),
-            Spacer(),
-            Divider(),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Çıkış Yap'),
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Kullanıcı'),
+              onTap: () => context.push("/register"),
+            ),
+            const Spacer(),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Çıkış Yap'),
               onTap: () => context.go("/login"),
             ),
           ],
@@ -82,7 +106,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: DotLottieLoader.fromAsset(
@@ -104,10 +128,10 @@ class HomeScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surfaceVariant,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
                 ),
                 child: ListView(
-                  padding: EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(24),
                   children: [
                     SuggestedActionCard(
                       icon: Icons.article,
@@ -115,14 +139,14 @@ class HomeScreen extends StatelessWidget {
                       subtitle: "En güncel haberleri görüntüleyin",
                       onTap: () => context.push("/latest-news"),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     SuggestedActionCard(
                       icon: Icons.trending_up,
                       title: "Popüler Haberler",
                       subtitle: "En çok okunan haberleri keşfedin",
                       onTap: () => context.push("/trending-news"),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     SuggestedActionCard(
                       icon: Icons.category,
                       title: "Kategoriler",
@@ -136,7 +160,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

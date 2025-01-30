@@ -9,6 +9,9 @@ import '../screens/profile_screen.dart';
 import '../screens/search_screen.dart';
 import '../screens/voice_screen.dart';
 import '../screens/register_screen.dart';
+import '../screens/settings_screen.dart';
+
+
 
 // Router yapılandırması
 final router = GoRouter(
@@ -41,10 +44,13 @@ final router = GoRouter(
     
     GoRoute(
       path: '/register',
-      pageBuilder: (context, state) => NoTransitionPage<void>(
-        key: state.pageKey,
-        child: const RegisterScreen(),
-      ),
+      builder: (context, state) => const RegisterScreen(),
     ),
-  ],
-);
+
+    GoRoute(
+      path: '/settings',
+      builder: (context, state) => const SettingsScreen(),
+      ),
+    
+    ],
+ );

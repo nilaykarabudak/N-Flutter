@@ -38,6 +38,8 @@ Kullanıcılar, uygulama hem gündüz hem de gece modu seçenekleri sunacak.
 
 Uygulama, hem mobil cihazlar (akıllı telefon ve tablet) hem de masaüstü bilgisayarlar için optimize edilecek.
 
+- Dil Desteği
+
 
   
 
